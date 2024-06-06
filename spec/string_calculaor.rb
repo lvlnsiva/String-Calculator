@@ -31,4 +31,10 @@ RSpec.describe StringCalculator, "#add" do
       expect(StringCalculator.add("#{(["10"]*100).join(",")}")).to eql(1000)
     end
   end
+
+  context "new lines as delimiters" do
+    it "supoorts new lines" do
+      expect(StringCalculator.add("1\n2")).to eql(3)
+    end
+  end
 end
