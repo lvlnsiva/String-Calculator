@@ -20,4 +20,15 @@ RSpec.describe StringCalculator, "#add" do
     end
   end
 
+  context "3 numbers" do
+    it "returns 6 for 1,2,3" do
+      expect(StringCalculator.add("1,2,3")).to eql(6)
+    end
+  end
+
+  context "many numbers" do
+    it "returns 1000 for 100 10s" do
+      expect(StringCalculator.add("#{(["10"]*100).join(",")}")).to eql(1000)
+    end
+  end
 end
