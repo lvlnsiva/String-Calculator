@@ -37,4 +37,12 @@ RSpec.describe StringCalculator, "#add" do
       expect(StringCalculator.add("1\n2")).to eql(3)
     end
   end
+
+  context "raise error for negitive numbers" do
+    it "raises an exception for negitive numbers" do
+      lamda{
+        expect(StringCalculator.add("-1")).to raise_error 
+      }
+    end
+  end
 end
